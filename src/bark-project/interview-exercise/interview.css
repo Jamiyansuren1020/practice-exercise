@@ -1,0 +1,98 @@
+.main-container{
+    background: #E5E5E5;
+    border-radius: 1px;
+    height: 40rem;
+    justify-content: center;
+}
+.second-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-items: flex-start;
+}
+.third-container{
+    border: 1px solid gray;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    width: 30rem;
+    background-color: white;
+    padding: 20px;
+    align-content: space-around;
+}
+/* .inside-third-container{
+    display: flex;
+    align-items: space-evenly;
+} */
+.top-container{
+    margin-bottom: 10px;
+}
+.image-container{
+    display: flex;
+}
+.text-image{
+    display: flex;
+    flex-direction: column;
+}
+.hello{
+    font-weight: bold;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.name{
+    font-weight: bolder;
+}
+.ronny-who{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+    font-style: bolder;
+}
+.welcome{
+    /* border: 1px solid gray; */
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    width: fit-content;
+    height: fit-content;
+    background-color:#E5E5E5;
+}
+.do-you-wish{
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    width: fit-content;
+    height: fit-content;
+    background-color:#E5E5E5;
+}
+.button-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: flex-end;
+}
+.button-blue{
+    display: flex;
+    background: #0EA5E9;
+    height: 40px;
+    width: 12rem;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    border-radius: 10px;
+    color:white
+}
+.button-red{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #EF4444;
+    height: 40px;
+    width: 12rem;
+    border-radius: 10px;
+    color:white
+}

@@ -60,7 +60,7 @@ const reduceDogsInfo = (curr, action) => {
             if(action.id === dog.id) {
               return {
                 ...dog,
-                vaccinations: dog.vaccinations.map((vac, qty) => {
+                vaccinations: dog.vaccinations.map((vac) => {
                   if(vac.vaccinationId === action.vacId) {
                     return {
                       ...vac, status: vac.status === "Verified" ? "Expired" : "Verified",
