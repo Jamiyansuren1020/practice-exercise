@@ -1,26 +1,66 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+// import { AudioOutlined } from '@ant-design/icons';
+// import { Input, Space } from 'antd';
 
 export default function RandomPeopleApi() {
   const [peopleData, setPeopleData] = useState([]);
-  console.log(peopleData);
+  const [peopleDataSecondPage, setPeopleDataSecondPage] = useState([])
+  console.log(peopleData,'firstPage');
+  console.log(peopleDataSecondPage,'secondPage')
+//   const { Search } = Input;
+
+// const suffix = (
+//   <AudioOutlined
+//     style={{
+//       fontSize: 16,
+//       color: '#1890ff',
+//     }}
+//   />
+// );
 
   const fetchPeopleApi = () => {
     axios.get("https://swapi.dev/api/people").then((res) => {
       if (res.status === 200) {
         setPeopleData(res.data.results);
-        console.log(res.data);
+        // console.log(res.data);
       }
     });
   };
+  const fetchPeopleApiSecondPage =() => {
+    axios
+    .get("https://swapi.dev/api/people?page=2")
+    .then((res) => {
+        if(res.status === 200) {
+            setPeopleDataSecondPage(res.data.results)
+            // console.log(res.data, 'secondpage')
+        }
+    })
+  }
 
   useEffect(() => {
     fetchPeopleApi();
+    fetchPeopleApiSecondPage()
   }, []);
   return (
     <div>
       <div style={{ display:'flex',justifyContent:'center',alignItems:'center' }}>
+      {/* <Search
+          style={{
+            backgroundColor: "#81b71",
+            display: "flex",
+            justifyContent: "center",
+            marginRight: "50px",
+            fontWeight: "bolder",
+          }}
+          color="green"
+          placeholder="What do you want to listen to?"
+          enterButton="Search"
+          size="large"
+          suffix={suffix}
+          onSearch= {null}
+        /> */}
         <table style={{dispay:'flex', border:'1px solid black',borderRadius:'7px', alignContent:'center', height:'20rem'}}>
           <thead
             style={{
@@ -67,8 +107,8 @@ export default function RandomPeopleApi() {
         </table>
       </div>
       <span style={{display:'flex', justifyContent:'space-around',padding:'10px',}}>
-        <div>Previous Page</div>
-        <div>Next Page</div>
+        <div style={{cursor:'pointer'}}>Previous Page</div>
+        <div style={{cursor:'pointer'}}>Next Page</div>
       </span>
     </div>
   );
